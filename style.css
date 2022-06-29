@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
+
+html {
+    /* We use it to prevent padding adding extra height or width over the maximum height and width of the page */
+    box-sizing: border-box;
+}
+
+body {
+    /* We set up margin at the value of 0 in all four sides (top, bottom, left, right) */
+    margin: 0;
+    /* We stretch the website to its maximum height (100vh) regardless of how much space it takes so that it always looks full and better */
+    min-height: 100vh;
+    font-family: 'Codystar', cursive;
+    background-color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 80px;
+    letter-spacing: 1px;
+}
+
+/* Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8)
+}
+
+.loader img {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Image Container */
+.image-container {
+    margin: 10px 30%;
+}
+
+.image-container img {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Media Query: Large Smartphones */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 37px;
+    }
+
+    .image-container {
+        margin: 20px;
+    }
+}
