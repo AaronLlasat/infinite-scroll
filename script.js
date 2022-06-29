@@ -4,13 +4,14 @@ let areImagesLoaded = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 
+
 // DOM Manipulation
 const imageContainer = document.getElementById("image-container");
 const loader = document.getElementById("loader");
 
 // Unsplash API
 let imageCount = 5;
-const apiKey = 'FaCvreyu3y0nct64Fy0pSI5srx5YvtFU9OxMZciZ-ok'
+let apiKey = config.API_KEY;
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${imageCount}`;
 
 // Check if all images were loaded
