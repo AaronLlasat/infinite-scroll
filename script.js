@@ -11,7 +11,8 @@ const loader = document.getElementById("loader");
 
 // Unsplash API
 let imageCount = 5;
-let apiKey = config.API_KEY;
+// Never show your API key in your code. I did it because it's public information available for everyone and because there's no server side to this website.
+let apiKey = '3NW6Oyuglk9hqVm-89znx9pXUdBkPg5EELx5sdcHfas';
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${imageCount}`;
 
 // Check if all images were loaded
@@ -40,7 +41,7 @@ const displayPhotos = () => {
 
     photosArray.forEach((photo) => {
         // Create <a> to link to Unsplash
-        const item = document.createElement("a");;
+        const item = document.createElement("a");
         setAttributes(item, {
             href: photo.links.html,
             target: "_blank"
@@ -71,7 +72,15 @@ async function getPhotos(){
         photosArray = await response.json();
         displayPhotos();
     } catch (error) {
-        console.log(error);
+        setTimeout(() => {
+            const img = document.createElement("img");
+            setAttributes(img, {
+                src: "errorYoda.jpg",
+                alt: "API Error: Cannot display pictures"
+            })
+           loader.hidden=true;
+           imageContainer.appendChild(img);
+       }, 20000);
     }
 }
 
